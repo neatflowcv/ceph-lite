@@ -11,10 +11,10 @@ func TestCrush(t *testing.T) {
 	myCrushMap := crush.NewCrushMap()
 
 	// OSD 추가 (가중치는 디스크 용량 등에 비례)
-	myCrushMap.AddDevice(0, 1.0) // osd.0
-	myCrushMap.AddDevice(1, 1.0) // osd.1
-	myCrushMap.AddDevice(2, 1.0) // osd.2
-	myCrushMap.AddDevice(3, 1.0) // osd.3
+	myCrushMap.AddDevice(crush.NewDevice(0, 1.0)) // osd.0
+	myCrushMap.AddDevice(crush.NewDevice(1, 1.0)) // osd.1
+	myCrushMap.AddDevice(crush.NewDevice(2, 1.0)) // osd.2
+	myCrushMap.AddDevice(crush.NewDevice(3, 1.0)) // osd.3
 
 	// 호스트 버킷 정의
 	myCrushMap.AddBucket("host_node1", "host", "straw", []string{"osd.0", "osd.1"})
