@@ -42,11 +42,3 @@ func (cm *CrushMap) GetBucketItems(bucketName string) ([]string, bool) {
 	}
 	return bucket.Items, true
 }
-
-func (cm *CrushMap) GetDeviceWeight(deviceName string) float64 {
-	dev, ok := cm.Devices[deviceName]
-	if !ok {
-		return 0.0
-	}
-	return dev.Weight
-}
